@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour {
 	[Header("Rigidbody 2D")]
@@ -25,7 +26,9 @@ public class Player : MonoBehaviour {
 
 	[Header("Slider")]
 	public Slider slider;
+	private float _startSlider = 5;
 
+	public bool isOnGround = true;
 
 	State state = State.Sitting;
 
@@ -35,6 +38,8 @@ public class Player : MonoBehaviour {
 
 	private void Start() {
 		_frog.sprite = frogSit;
+
+		slider.gameObject.SetActive(false);
 	}
 
 	void FixedUpdate() {
@@ -45,6 +50,8 @@ public class Player : MonoBehaviour {
 		if (state == State.Sitting) SittingUpdate();
 
 		VisualForceJump();
+
+		CheckGround();
 	}
 
 	void SittingUpdate() {
@@ -57,7 +64,9 @@ public class Player : MonoBehaviour {
 		state = State.PreparingForJump;
 
 		while (Input.GetKey(KeyCode.Mouse0)) {
-			jumpForce += Time.deltaTime * 2;
+			slider.gameObject.SetActive(true);
+			jumpForce += Time.deltaTime * 5;
+			_startSlider -= Time.deltaTime * 5;
 
 			if (jumpForce > 5) {
 				jumpForce = 5;
@@ -66,6 +75,7 @@ public class Player : MonoBehaviour {
 		}
 
 		state = State.Jumping;
+		slider.gameObject.SetActive(false);
 		_rb.linearVelocity = _rb.GetRelativeVector(Vector2.up) * jumpDistance / jumpTime * (jumpForce + 1);
 		_frog.sprite = frogJump;
 
@@ -74,13 +84,22 @@ public class Player : MonoBehaviour {
 		_rb.linearVelocity = Vector2.zero;
 		_frog.sprite = frogSit;
 		jumpForce = 0;
+		_startSlider = 5;
 		state = State.Sitting;
+		DieIfNotOnGround();
 	}
 
-	void VisualForceJump()
-	{
-		slider.value = jumpForce;
-		slider.maxValue = 5;
+	void DieIfNotOnGround() {
+		if (isOnGround == false) print("you are supposed to die");
 	}
 
+	void VisualForceJump() {
+		slider.value = _startSlider;
+	}
+
+	public LayerMask ground;
+
+	void CheckGround () {
+		isOnGround = Physics2D.OverlapCircle(transform.position, 0.5f, ground);
+	}
 }
