@@ -12,19 +12,24 @@ public class Player : MonoBehaviour {
 	[Tooltip("Jump time in seconds")]
 	public float JumpTime = 1;
 
-	Rigidbody2D rb;
+	[Header("Sprites")]
+	[SerializeField] private SpriteRenderer _frog;
+	public Sprite frogJump;
+	public Sprite frogSit;
+
+	[SerializeField] private Rigidbody2D _rb;
 
 	State state = State.Sitting;
 	public enum State {
 		Sitting, Jumping, PreparingForJump
 	}
-	
-	void Awake() {
-		rb = GetComponent<Rigidbody2D>();
+
+	private void Start() {
+		_frog.sprite = frogSit;
 	}
-	
+
 	void FixedUpdate() {
-		if (state == State.Sitting) rb.rotation += RotationSpeed * Time.deltaTime;
+		if (state == State.Sitting) _rb.rotation += RotationSpeed * Time.deltaTime;
 	}
 	void Update() {
 		if (state == State.Sitting) SittingUpdate();
@@ -43,13 +48,16 @@ public class Player : MonoBehaviour {
 			force += Time.deltaTime;
 			yield return null;
 		}
-		
-		rb.linearVelocity = rb.GetRelativeVector(Vector2.up) * JumpDistance / JumpTime * (force + 1);
+
 		state = State.Jumping;
-		
+		_rb.linearVelocity = _rb.GetRelativeVector(Vector2.up) * JumpDistance / JumpTime * (force + 1);
+
+		_frog.sprite = frogJump;
+
 		yield return new WaitForSeconds(JumpTime);
 
-		rb.linearVelocity = Vector2.zero;
+		_rb.linearVelocity = Vector2.zero;
+		_frog.sprite = frogSit;
 		state = State.Sitting;
 	}
 }
