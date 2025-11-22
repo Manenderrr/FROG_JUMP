@@ -4,7 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 	[Header("Spinning")]
 	[Tooltip("Rotation speed in degrees per second")]
-	public float rotationSpeed = 50;
+	public float RotationSpeed = 50;
 	
 	[Header("Jumping")]
 	[Tooltip("Jump distance Unity distance units")]
@@ -12,24 +12,19 @@ public class Player : MonoBehaviour {
 	[Tooltip("Jump time in seconds")]
 	public float JumpTime = 1;
 
-	[Header("Components")]
-	public Rigidbody2D rigidbody2D;
+	Rigidbody2D rb;
 
-	State _state = State.Sitting;
-	State state {
-		get => _state;
-		set {
-			print($"{value} now");
-			_state = value;
-		}
-	}
+	State state = State.Sitting;
 	public enum State {
 		Sitting, Jumping, PreparingForJump
 	}
 	
-	// Update is called once per frame
+	void Awake() {
+		rb = GetComponent<Rigidbody2D>();
+	}
+	
 	void FixedUpdate() {
-		if (state == State.Sitting) rigidbody2D.rotation += rotationSpeed * Time.deltaTime;
+		if (state == State.Sitting) rb.rotation += RotationSpeed * Time.deltaTime;
 	}
 	void Update() {
 		if (state == State.Sitting) SittingUpdate();
@@ -49,12 +44,12 @@ public class Player : MonoBehaviour {
 			yield return null;
 		}
 		
-		rigidbody2D.linearVelocity = rigidbody2D.GetRelativeVector(Vector2.up) * JumpDistance / JumpTime * (force + 1);
+		rb.linearVelocity = rb.GetRelativeVector(Vector2.up) * JumpDistance / JumpTime * (force + 1);
 		state = State.Jumping;
 		
 		yield return new WaitForSeconds(JumpTime);
 
-		rigidbody2D.linearVelocity = Vector2.zero;
+		rb.linearVelocity = Vector2.zero;
 		state = State.Sitting;
 	}
 }
