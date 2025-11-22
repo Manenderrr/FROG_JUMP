@@ -1,0 +1,15 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = tab
+end_of_line = lf # CRLF is a teletype vestige is it not, also nicer to use from non-Windows
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = false # Why would you even do that
+
+[*.cs]
+csharp_new_line_before_open_brace = none # Leaving an entire line for them feels wasteful
+dotnet_style_namespace_match_folder = false # I'm not supposed to create any namespaces at all and I will definitely not make them match the folder structure

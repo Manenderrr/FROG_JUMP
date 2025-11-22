@@ -1,0 +1,46 @@
+VisualElement {
+    flex-grow: 1;
+}
+
+#title {
+    -unity-text-align: upper-center;
+    font-size: 35px;
+}
+
+#logo {
+    --unity-image: url("project://database/Assets/frogge.jpeg?fileID=2800000&guid=3401d66f3303454b7bdf1995d05b5db2&type=3#frogge");
+    --unity-image-size: scale-to-fit;
+}
+
+#buttons {
+    align-items: center;
+    flex-shrink: 0;
+}
+
+Button {
+    font-size: 50px;
+    width: 200px;
+}
+
+#root > Label {
+    white-space: normal;
+    flex-grow: 0;
+    width: 20%;
+    align-self: flex-end;
+}
+
+#main {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+Label {
+    -unity-text-align: middle-center;
+    flex-grow: 0;
+    font-size: 40px;
+}
+
+#game-name {
+    flex-grow: 0;
+    font-size: 100px;
+}
