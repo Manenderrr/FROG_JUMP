@@ -23,7 +23,8 @@ public class Player : MonoBehaviour {
 	public enum State {
 		Sitting, Jumping, PreparingForJump
 	}
-
+	bool isOnGround = false;
+	
 	private void Start() {
 		_frog.sprite = frogSit;
 	}
@@ -55,9 +56,22 @@ public class Player : MonoBehaviour {
 		_frog.sprite = frogJump;
 
 		yield return new WaitForSeconds(JumpTime);
-
+		
 		_rb.linearVelocity = Vector2.zero;
 		_frog.sprite = frogSit;
+
 		state = State.Sitting;
+		DieIfNotOnGround();
+	}
+	
+	void DieIfNotOnGround() {
+		if (isOnGround) print("you are supposed to die");
+	}
+	
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.tag == "Ground") isOnGround = true;
+	}
+	void OnTriggerExit2D(Collider2D other) {
+		if (other.tag == "Ground") isOnGround = false;
 	}
 }

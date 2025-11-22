@@ -331,7 +331,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -647,10 +647,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5c7ed03293376ff9fb4e5af3ed9fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  rotationSpeed: 50
+  RotationSpeed: 50
   JumpDistance: 1
   JumpTime: 1
-  rigidbody2D: {fileID: 2093657658}
 --- !u!50 &2093657658
 Rigidbody2D:
   serializedVersion: 5
