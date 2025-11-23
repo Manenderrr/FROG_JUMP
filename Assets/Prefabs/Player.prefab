@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2339692834968068136}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 3927374866918619263}
   - component: {fileID: 3009822956952248065}
   - component: {fileID: 8980911908843159219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,11 +103,6 @@ MonoBehaviour:
   frogJump: {fileID: -5806840172668023785, guid: 12beb8d492acf6cd0883dabfc68c9bac, type: 3}
   frogSit: {fileID: 1894953123, guid: 027414993be1bbd48aaa5c99f1ab96c8, type: 3}
   slider: {fileID: 7931042742801707248}
-  teleporter:
-    serializedVersion: 2
-    m_Bits: 64
-  teleport: 0
-  toScene: 0
 --- !u!212 &7279114892795287954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -373,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4657842244224550339}
   - component: {fileID: 7931042742801707248}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +459,7 @@ GameObject:
   - component: {fileID: 2414960391924570296}
   - component: {fileID: 6270727139992151775}
   - component: {fileID: 1355641197355415046}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +560,7 @@ GameObject:
   - component: {fileID: 5838295947881366747}
   - component: {fileID: 6861875750995037573}
   - component: {fileID: 4129337348792775966}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +635,7 @@ GameObject:
   - component: {fileID: 458044575437730014}
   - component: {fileID: 4534127107592990994}
   - component: {fileID: 208076510079264953}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

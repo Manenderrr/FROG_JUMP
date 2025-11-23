@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 4165749908208559884}
   - component: {fileID: 5396918690326314106}
   - component: {fileID: 3323922777983908776}
-  - component: {fileID: -332722493638367744}
-  - component: {fileID: 6034166212832866762}
+  - component: {fileID: -7475623643184269567}
   m_Layer: 7
   m_Name: wodovorot_0
   m_TagString: Untagged
@@ -84,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4267567705295466918, guid: 33cf36c78b1847d45b6740ca5e66ae83, type: 3}
+  m_Sprite: {fileID: -8774943870979664407, guid: 235cd207865567a4f93ef6103fd4300d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +104,7 @@ Animator:
   m_GameObject: {fileID: 6993478592563732967}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6d1b63facc874e24dbcd558af84ff2ed, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2f94d0a76d690534f98deb494ed68238, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -180,7 +179,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-332722493638367744
+--- !u!114 &-7475623643184269567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,18 +188,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6993478592563732967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1848e4dd563d90e468168478c8e84918, type: 3}
+  m_Script: {fileID: 11500000, guid: e33f8e9575937f24ea3671c45945c65d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneManagement
---- !u!114 &6034166212832866762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6993478592563732967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1848e4dd563d90e468168478c8e84918, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Wodovorot
+  m_EditorClassIdentifier: Assembly-CSharp::Teleporting
+  player:
+    serializedVersion: 2
+    m_Bits: 256
+  teleport: 0
+  toScene: 0

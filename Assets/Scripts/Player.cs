@@ -64,18 +64,12 @@ public class Player : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (state == State.Sitting) _rb.rotation += RotationSpeed * Time.deltaTime;
-
-		TeleportBool();
 	}
 
 	void Update() {
 		if (state == State.Sitting) SittingUpdate();
 
 		VisualForceJump();
-
-		if (teleport == true) {
-			Teleported();
-		}
 	}
 
 	void SittingUpdate() {
@@ -142,16 +136,5 @@ public class Player : MonoBehaviour {
 		if (slider != null) slider.value = _startSlider;
 	}
 
-	[Header("Teleporting")]
-	public LayerMask teleporter;
-	public bool teleport;
-	public int toScene;
-
-	void TeleportBool() {
-		teleport = Physics2D.OverlapCircle(transform.position, 0.4f, teleporter);
-	}
-
-	public void Teleported() {
-		SceneManager.LoadScene(toScene);
-	}
+	
 }
