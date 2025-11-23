@@ -35,7 +35,8 @@ public class Player : MonoBehaviour {
 			return groundContactCollider.GetContacts(new ContactFilter2D() { layerMask = ground, useTriggers = true }, colliders) > 0;
 		}
 	}
-	
+	public DeathScreen deathScreen;
+
 	[Header("Sprites")]
 	[SerializeField] SpriteRenderer sprite;
 	public Sprite frogJump;
@@ -104,9 +105,17 @@ public class Player : MonoBehaviour {
 	}
 
 	void DieIfNotOnGround() {
-		if (!IsOnGround) print("you are supposed to die");
+		if (!IsOnGround) Die();
 	}
-
+	public void Die() {
+		if (deathScreen is null) {
+			DeathScreen.Restart();
+			return;
+		}
+		Instantiate(deathScreen);
+		Destroy(gameObject);
+	}
+	
 	void VisualForceJump() {
 		if (slider is not null) slider.value = _startSlider;
 	}

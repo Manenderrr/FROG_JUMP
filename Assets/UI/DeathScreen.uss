@@ -1,9 +1,16 @@
-Label {
-    -unity-text-align: middle-center;
+#death-message {
     flex-grow: 1;
-    font-size: 50px;
+    font-size: 100px;
 }
 
 #restart-button {
     align-self: center;
+}
+
+:root {
+    background-color: rgba(0, 0, 0, 0.59);
+    flex-grow: 1;
+    justify-content: center;
+    -unity-text-align: middle-center;
+    font-size: 50px;
 }
