@@ -19,26 +19,30 @@ public class Player : MonoBehaviour {
 	[Tooltip("Jump time in seconds")]
 	public float jumpTime;
 	public float jumpForce;
-
-	[Header("Sounds")]
-	public AudioSource audioSource;
-	public AudioClip jumpClip;
-
+	
 	State state = State.Sitting;
 	public enum State {
 		Sitting, Jumping, PreparingForJump
 	}
+	
+	[Header("Sounds")]
+	public AudioSource audioSource;
+	public AudioClip jumpClip;
+	public AudioClip deathClip;
 
 	[Header("Death by overhydration")]
 	public LayerMask ground;
 	public Collider2D groundContactCollider;
 	bool IsOnGround {
 		get {
+			
 			List<Collider2D> colliders = new();
+			int amount = groundContactCollider.GetContacts(new ContactFilter2D() { layerMask = ground, useLayerMask = true, useTriggers = true }, colliders);
 			foreach (Collider2D collider in colliders) {
 				print(collider.name);
 			}
-			return groundContactCollider.GetContacts(new ContactFilter2D() { layerMask = ground, useTriggers = true }, colliders) > 0;
+			print($"IsOnGround check: {amount > 0}");
+			return amount > 0;
 		}
 	}
 	public DeathScreen deathScreen;
@@ -55,7 +59,7 @@ public class Player : MonoBehaviour {
 	private void Start() {
 		sprite.sprite = frogSit;
 
-		slider?.gameObject.SetActive(false);
+		if (slider != null) slider.gameObject.SetActive(false);
 	}
 
 	void FixedUpdate() {
@@ -84,7 +88,7 @@ public class Player : MonoBehaviour {
 		state = State.PreparingForJump;
 
 		while (Input.GetKey(KeyCode.Mouse0)) {
-			slider?.gameObject.SetActive(true);
+			if (slider != null) slider.gameObject.SetActive(true);
 			
 			jumpForce += Time.deltaTime * 5;
 			jumpTime += Time.deltaTime;
@@ -100,10 +104,10 @@ public class Player : MonoBehaviour {
 		}
 
 		state = State.Jumping;
-		slider?.gameObject.SetActive(false);
+		if (slider != null) slider.gameObject.SetActive(false);
 		_rb.linearVelocity = _rb.GetRelativeVector(Vector2.up) * jumpDistance / jumpTime * (jumpForce + 1);
 		sprite.sprite = frogJump;
-		audioSource.PlayOneShot(jumpClip);
+		if (audioSource != null && jumpClip != null) audioSource.PlayOneShot(jumpClip);
 
 		yield return new WaitForSeconds(jumpTime);
 
@@ -125,15 +129,17 @@ public class Player : MonoBehaviour {
 		if (!IsOnGround) Die();
 	}
 	public void Die() {
-		if (deathScreen is null) {
-			DeathScreen.Restart();
+		if (deathScreen == null) {
+			Debug.LogError("No death screen, cannot die");
 			return;
 		}
+		if (GlobalSound.Instance != null && deathClip != null ) GlobalSound.Instance.PlayOneShot(deathClip);
 		Instantiate(deathScreen);
 		Destroy(gameObject);
 	}
 	
 	void VisualForceJump() {
+<<<<<<< HEAD
 		slider.value = _startSlider;
 	}
 
@@ -148,5 +154,8 @@ public class Player : MonoBehaviour {
 
 	public void Teleported() {
 		SceneManager.LoadScene(toScene);
+=======
+		if (slider != null) slider.value = _startSlider;
+>>>>>>> d2abc6d6fd80ab0cfc0926549a91ceed9f733d5d
 	}
 }
