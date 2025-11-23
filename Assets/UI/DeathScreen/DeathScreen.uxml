@@ -1,7 +1,7 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/DeathScreen/DeathScreen.uss?fileID=7433441132597879392&amp;guid=9a73fde22ceee899b83c070fce2ea2d1&amp;type=3#DeathScreen" />
     <Style src="project://database/Assets/UI/MainStyle.uss?fileID=7433441132597879392&amp;guid=9c1ff14eec7b869cea30340111262588&amp;type=3#MainStyle" />
-    <ui:Label text="you ded lmao" name="death-message" />
+    <ui:Label text="Game Over" name="death-message" />
     <ui:VisualElement name="button-container" style="flex-grow: 0.5;">
         <ui:Button text="Restart" name="restart-button" />
     </ui:VisualElement>
