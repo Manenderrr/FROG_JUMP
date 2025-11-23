@@ -3,13 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-<<<<<<< HEAD
   tags:
   - Ground
   - Wall
-=======
-  tags: []
->>>>>>> d2abc6d6fd80ab0cfc0926549a91ceed9f733d5d
   layers:
   - Default
   - TransparentFX
