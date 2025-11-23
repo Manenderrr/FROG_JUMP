@@ -15,17 +15,23 @@ EditorBuildSettings:
     path: Assets/Scenes/kamishi/kamish-2.unity
     guid: 563f779f7e5313d4480478eacc9c7a11
   - enabled: 1
-    path: Assets/Scenes/kamishi/kamish-2 1.unity
+    path: Assets/Scenes/kamishi/kamish-3.unity
     guid: 8e0ae26212e1bd24a9dc43059e80451d
   - enabled: 1
-    path: Assets/Scenes/kamishi/kamish-2 2.unity
+    path: Assets/Scenes/kamishi/kamish-4.unity
     guid: 8b93ffc312d45214aa77e5e3a56a07a8
   - enabled: 1
-    path: Assets/Scenes/kamishi/kamish-2 3.unity
+    path: Assets/Scenes/kamishi/kamish-5.unity
     guid: f5d7f3900833b2b44ae69bf675f17701
   - enabled: 1
-    path: Assets/Scenes/kamishi/kamish-2 4.unity
+    path: Assets/Scenes/kamishi/kamish-6.unity
     guid: f3df9b452c6e2494b9181db4ce51e73d
+  - enabled: 1
+    path: Assets/Scenes/kamishi/kamish-7.unity
+    guid: 8403fd1d1e97c14469343fae0edbb8a9
+  - enabled: 1
+    path: Assets/Scenes/fabric/fabric-1.unity
+    guid: e342eb999d874b242b1ab51cb11f31ad
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

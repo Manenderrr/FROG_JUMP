@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GlobalSound : MonoBehaviour {
 	public static AudioSource Instance;
+	public AudioClip death;
+	private GameObject player;
 	
 	void Awake() {
 		if (Instance != null) {
@@ -9,5 +11,13 @@ public class GlobalSound : MonoBehaviour {
 		}
 		AudioSource source = GetComponent<AudioSource>();
 		if (source != null) Instance = source;
+
+		player = GameObject.FindGameObjectWithTag("Player");
+	}
+
+	private void Update() {
+		if (player == null) {
+			Instance.PlayOneShot(death);
+		}
 	}
 }
