@@ -1,0 +1,9 @@
+Label {
+    -unity-text-align: middle-center;
+    flex-grow: 1;
+    font-size: 50px;
+}
+
+#restart-button {
+    align-self: center;
+}

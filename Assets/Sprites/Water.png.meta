@@ -3,8 +3,8 @@ guid: ab9d2ff45795f354b8424b43dd818555
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3575561350957151056
-    second: Water 1_0
+      213: 6049605792901559095
+    second: Water_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,10 +113,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0903e844f2ab47e4eb2effb94387d429
-      internalID: 146545245
+      spriteID: 733fa0d9a6484f350800000000000000
+      internalID: 6049605792901559095
       vertices: []
       indices: 
       edges: []
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b901fb070b34c674dbe5ccf06de0b2c1
-      internalID: 662685520
+      spriteID: 691ccb61e1a0ef64986b00d5f2eeca18
+      internalID: 1339948762
       vertices: []
       indices: 
       edges: []
@@ -159,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caff3eae481d344488dd1cc1bcbdb153
-      internalID: -1815567141
+      spriteID: a993052a9b3ba8a4786d504d3b4cc8b0
+      internalID: -805757701
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c18971f638c81d349a8027614182453f
-      internalID: -1238261610
+      spriteID: 4be6ade471e7acc4f97dabd52ec56f0f
+      internalID: 1630548746
       vertices: []
       indices: 
       edges: []
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 653981ad6af3480498f3e36bc496aa27
-      internalID: 1211235089
+      spriteID: 74b9f8bcaf0c0b943b06dddabc4390a4
+      internalID: -2099673587
       vertices: []
       indices: 
       edges: []
@@ -225,8 +225,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db60b08fcb37fef4aa52063d093c6cea
-      internalID: 1763591647
+      spriteID: 57e34e4c0be73614d9016ce9dcc3de31
+      internalID: -1142713763
       vertices: []
       indices: 
       edges: []
@@ -247,8 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bea6529f9cfc82b4c9c8d130743ff5bd
-      internalID: -933600755
+      spriteID: b06490172ed64db4bafc406e440a35f6
+      internalID: 2111017726
       vertices: []
       indices: 
       edges: []
@@ -257,7 +257,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4357ea6a0f889c5458e6d25c9b6b5c16
+    spriteID: b8d9549b75c5e8b4bb97431113c3846e
     internalID: 0
     vertices: []
     indices: 
@@ -269,13 +269,13 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":100.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Water_0: 146545245
-      Water_1: 662685520
-      Water_2: -1815567141
-      Water_3: -1238261610
-      Water_4: 1211235089
-      Water_5: 1763591647
-      Water_6: -933600755
+      Water_0: 6049605792901559095
+      Water_1: 1339948762
+      Water_2: -805757701
+      Water_3: 1630548746
+      Water_4: -2099673587
+      Water_5: -1142713763
+      Water_6: 2111017726
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
