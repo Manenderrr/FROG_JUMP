@@ -1043,55 +1043,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 766377855541716530, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+    - target: {fileID: 1128016079385340863, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.5
       objectReference: {fileID: 0}
-    - target: {fileID: 766377855541716530, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+    - target: {fileID: 1128016079385340863, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.93
       objectReference: {fileID: 0}
-    - target: {fileID: 766377855541716530, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+    - target: {fileID: 1128016079385340863, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 766377855541716530, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+    - target: {fileID: 1128016079385340863, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 766377855541716530, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+    - target: {fileID: 1128016079385340863, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 766377855541716530, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+    - target: {fileID: 1128016079385340863, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 766377855541716530, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+    - target: {fileID: 1128016079385340863, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 766377855541716530, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+    - target: {fileID: 1128016079385340863, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 766377855541716530, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+    - target: {fileID: 1128016079385340863, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 766377855541716530, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+    - target: {fileID: 1128016079385340863, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2692953223627839063, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+    - target: {fileID: 2331306104290515930, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
       propertyPath: m_Name
-      value: RespawnManager
+      value: GameControllerKamishi
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
 --- !u!1001 &1565344484
 PrefabInstance:
   m_ObjectHideFlags: 0
