@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
@@ -51,8 +52,6 @@ public class Player : MonoBehaviour {
 	public Slider slider;
 	private float _startSlider = 5;
 
-	public bool isOnGround = true;
-
 	private void Start() {
 		sprite.sprite = frogSit;
 
@@ -61,12 +60,18 @@ public class Player : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (state == State.Sitting) _rb.rotation += RotationSpeed * Time.deltaTime;
+
+		TeleportBool();
 	}
 
 	void Update() {
 		if (state == State.Sitting) SittingUpdate();
 
 		VisualForceJump();
+
+		if (teleport == true) {
+			Teleported();
+		}
 	}
 
 	void SittingUpdate() {
@@ -102,14 +107,18 @@ public class Player : MonoBehaviour {
 
 		yield return new WaitForSeconds(jumpTime);
 
+		Sitting();
+		
+		DieIfNotOnGround();
+	}
+
+	void Sitting() {
 		_rb.linearVelocity = Vector2.zero;
 		sprite.sprite = frogSit;
 		jumpTime = 0.2f;
 		jumpForce = 0;
 		_startSlider = 5;
 		state = State.Sitting;
-		
-		DieIfNotOnGround();
 	}
 
 	void DieIfNotOnGround() {
@@ -128,10 +137,16 @@ public class Player : MonoBehaviour {
 		slider.value = _startSlider;
 	}
 
-	void CheckGround () {
-		isOnGround = Physics2D.OverlapCircle(transform.position, 0.5f, ground);
+	[Header("Teleporting")]
+	public LayerMask teleporter;
+	public bool teleport;
+	public int toScene;
 
-		if (slider is not null) slider.value = _startSlider;
+	void TeleportBool() {
+		teleport = Physics2D.OverlapCircle(transform.position, 0.4f, teleporter);
 	}
-	
+
+	public void Teleported() {
+		SceneManager.LoadScene(toScene);
+	}
 }
