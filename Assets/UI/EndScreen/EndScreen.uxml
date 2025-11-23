@@ -1,0 +1,13 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/EndScreen/EndScreen.uss?fileID=7433441132597879392&amp;guid=a2b1a2bdce4945481aa49c02884f6903&amp;type=3#EndScreen" />
+    <Style src="project://database/Assets/UI/MainStyle.uss?fileID=7433441132597879392&amp;guid=9c1ff14eec7b869cea30340111262588&amp;type=3#MainStyle" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(104, 104, 104);">
+        <ui:VisualElement name="text-container">
+            <ui:Label text="Вы победили" name="you-won" />
+            <ui:Label text="Спасибо за игру!" name="thanks" />
+        </ui:VisualElement>
+        <ui:VisualElement name="button-container">
+            <ui:Button text="Выход" name="exit" style="align-self: center;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

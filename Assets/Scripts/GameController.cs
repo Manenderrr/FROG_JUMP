@@ -10,6 +10,10 @@ public class GameController : MonoBehaviour {
 	public Player CurrentPlayer { get; private set; } = null;
 	public bool respawnPlayerOnStart = true;
 	public DeathScreen deathScreen;
+	
+	[Header("Blocking input")]
+	public bool blockInputOnRespawn = false;
+	public bool blockInputOnce = true;
 
 	[Header("Audio")]
 	public AudioSource musicSource;
@@ -29,7 +33,7 @@ public class GameController : MonoBehaviour {
 		Instance = this;
 
 		currentCheckpoint = transform;
-		Respawn();
+		if (respawnPlayerOnStart) Respawn();
 	}
 	
 	public void Death() {
@@ -51,6 +55,11 @@ public class GameController : MonoBehaviour {
 		}
 		Player newPlayer = Instantiate(playerPrefab, currentCheckpoint.position, currentCheckpoint.rotation);
 		CurrentPlayer = newPlayer;
+		if (blockInputOnRespawn) {
+			newPlayer.blockInput = true;
+			if (blockInputOnce) blockInputOnRespawn = false;
+		}
+
 		deathScreen.HideDocument();
 		SetMusicLoop(levelMusicIntro, levelMusic);
 		

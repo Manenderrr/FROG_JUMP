@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
+	[Header("Input")]
+	public bool blockInput = false;
+
 	[Header("Rigidbody 2D")]
 	[SerializeField] Rigidbody2D _rb;
 
@@ -68,7 +71,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void SittingUpdate() {
-		if (Input.GetKeyDown(KeyCode.Mouse0) && state == State.Sitting) {
+		if (!blockInput && Input.GetKeyDown(KeyCode.Mouse0) && state == State.Sitting) {
 			StartCoroutine(Jump());
 		}
 	}

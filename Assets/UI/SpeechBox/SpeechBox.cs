@@ -10,6 +10,7 @@ public class SpeechBox : MonoBehaviour {
 	public List<string> lines;
 	[Tooltip("Caution: starts from zero!")]
 	public int currentLineIndex = 0;
+	public bool unlockInputAfterEnd = false;
 	
 	void OnEnable() {
 		_text = ui.rootVisualElement.Q<TextElement>(textName);
@@ -25,6 +26,7 @@ public class SpeechBox : MonoBehaviour {
 	
 	void UpdateDisplay() {
 		if (currentLineIndex >= lines.Count) {
+			if (unlockInputAfterEnd && GameController.Instance != null && GameController.Instance.CurrentPlayer != null) GameController.Instance.CurrentPlayer.blockInput = false;
 			Destroy(gameObject); // We are done
 			return;
 		}

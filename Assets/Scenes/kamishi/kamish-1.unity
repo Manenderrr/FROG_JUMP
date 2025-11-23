@@ -342,6 +342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameControllerKamishi
       objectReference: {fileID: 0}
+    - target: {fileID: 4150865429973530694, guid: 0bec7df6181c8feb4a21dc2fc040ca97, type: 3}
+      propertyPath: blockInputOnRespawn
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -756,6 +760,10 @@ PrefabInstance:
         \u0433\u043B\u0430\u0432\u043D\u044B\u0439 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440
         \u0437\u0430\u0432\u043E\u0434\u0430 \u043D\u0430 \u043C\u043E\u0451\u043C
         \u043E\u0437\u0435\u0440\u0435"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468673152511461368, guid: ceb158d2e992057c6ad90eb65a8cf9b6, type: 3}
+      propertyPath: unlockInputAfterEnd
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1468673152511461368, guid: ceb158d2e992057c6ad90eb65a8cf9b6, type: 3}
       propertyPath: 'lines.Array.data[10]'

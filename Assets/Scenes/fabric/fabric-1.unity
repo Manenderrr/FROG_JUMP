@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 269109371}
   - component: {fileID: 269109370}
   m_Layer: 0
-  m_Name: Square
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 274573948}
   - component: {fileID: 274573947}
   m_Layer: 0
-  m_Name: pixil-frame-0 (49) (1)_0 (2)
+  m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 388878064}
   - component: {fileID: 388878066}
   m_Layer: 6
-  m_Name: pixil-frame-0 (49) (1)_0
+  m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 627293339}
   - component: {fileID: 627293338}
   m_Layer: 0
-  m_Name: pixil-frame-0 (49) (1)_0 (3)
+  m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 794936468}
   - component: {fileID: 794936470}
   m_Layer: 6
-  m_Name: pixil-frame-0 (49)_0
+  m_Name: hole_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -903,6 +903,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RespawnManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4368467593107764683, guid: 836df7cb8399caf129e75935e91a5e7e, type: 3}
+      propertyPath: levelMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 5461418be881c5a0ab120f6ecbd46274, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -976,9 +980,11 @@ GameObject:
   - component: {fileID: 1281359711}
   - component: {fileID: 1281359710}
   - component: {fileID: 1281359709}
+  - component: {fileID: 1281359714}
+  - component: {fileID: 1281359713}
   - component: {fileID: 1281359712}
   m_Layer: 6
-  m_Name: pixil-frame-0 (56)_0
+  m_Name: generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1028,7 +1034,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2, y: 1.2303703}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &1281359710
 SpriteRenderer:
@@ -1100,11 +1106,55 @@ Transform:
   m_LocalPosition: {x: 0, y: 16.73, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1484387167}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1281359712
-BoxCollider2D:
+--- !u!114 &1281359712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281359708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d56e1e566ab2adcab88051b8335ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Generator
+  leverSprite: {fileID: 1484387166}
+  pulledLeverSprite: {fileID: -3067773075031933346, guid: 0c3271f9ca6e56840af1e6015aa9af21, type: 3}
+  secondsBeforeEndScreen: 3
+  endScreenSceneIndex: 9
+--- !u!50 &1281359713
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281359708}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &1281359714
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1138,17 +1188,8 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
+  m_Size: {x: 2, y: 1}
+  m_Direction: 1
 --- !u!1 &1484387165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,8 +1200,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1484387167}
   - component: {fileID: 1484387166}
+  - component: {fileID: 1484387170}
+  - component: {fileID: 1484387169}
+  - component: {fileID: 1484387168}
   m_Layer: 0
-  m_Name: pixil-frame-0 (61)_0
+  m_Name: lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1232,13 +1276,102 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484387165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.369, y: 16.374, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5615, y: -0.059333168, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1281359711}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1484387168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484387165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d56e1e566ab2adcab88051b8335ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  leverSprite: {fileID: 0}
+  pulledLeverSprite: {fileID: 0}
+  secondsBeforeEndScreen: 3
+  endScreenSceneIndex: 9
+--- !u!50 &1484387169
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484387165}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1484387170
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484387165}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.11, y: 0.4}
+    newSize: {x: 0.11, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.11, y: 0.4}
+  m_EdgeRadius: 0
 --- !u!1 &1512089492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,7 +1383,7 @@ GameObject:
   - component: {fileID: 1512089494}
   - component: {fileID: 1512089493}
   m_Layer: 0
-  m_Name: pixil-frame-0 (49) (1)_0 (1)
+  m_Name: back_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1341,7 +1474,7 @@ GameObject:
   - component: {fileID: 1768192719}
   - component: {fileID: 1768192718}
   m_Layer: 0
-  m_Name: pixil-frame-0 (49) (1)_0 (4)
+  m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1475,7 +1608,6 @@ SceneRoots:
   - {fileID: 794936467}
   - {fileID: 388878065}
   - {fileID: 1281359711}
-  - {fileID: 1484387167}
   - {fileID: 1512089494}
   - {fileID: 269109371}
   - {fileID: 274573949}

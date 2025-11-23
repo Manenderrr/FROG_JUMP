@@ -3,10 +3,6 @@
     font-size: 100px;
 }
 
-#restart-button {
-    align-self: center;
-}
-
 :root {
     background-color: rgba(0, 0, 0, 0.59);
     flex-grow: 1;

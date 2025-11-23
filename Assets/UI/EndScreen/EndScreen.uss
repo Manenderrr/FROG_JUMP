@@ -1,0 +1,19 @@
+#you-won {
+    font-size: 100px;
+    -unity-text-align: middle-center;
+}
+
+#thanks {
+    font-size: 50px;
+    -unity-text-align: middle-center;
+}
+
+#button-container {
+    flex-grow: 1;
+}
+
+#text-container {
+    flex-grow: 2;
+    align-items: center;
+    justify-content: center;
+}
