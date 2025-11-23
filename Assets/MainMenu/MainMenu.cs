@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class MainMenu : MonoBehaviour {
-	public string PlayScene = "Game";
+	public int PlayScene = 1;
 
 	public string ButtonsContainerName = "buttons";
 	public string PlayButtonText = "Play";
