@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 33cf36c78b1847d45b6740ca5e66ae83
+guid: 128fee52dd84c8a48a755a4232178d3a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4267567705295466918
-    second: wodovorot_0
+      213: 5478576516908247178
+    second: pixil-frame-0 (65)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wodovorot_0
+      name: pixil-frame-0 (65)_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 9
-        width: 58
-        height: 76
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5e4fe658cd86c4c0800000000000000
-      internalID: -4267567705295466918
+      spriteID: a88ec1db050d70c40800000000000000
+      internalID: 5478576516908247178
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wodovorot_0: -4267567705295466918
+      pixil-frame-0 (65)_0: 5478576516908247178
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
