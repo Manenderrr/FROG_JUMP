@@ -7,7 +7,6 @@
                 <ui:Image name="logo" />
                 <ui:Label text="Teh Forg Gmae" name="game-name" />
             </ui:VisualElement>
-            <ui:VisualElement name="buttons" />
         </ui:VisualElement>
         <ui:Label text="Made for Autumn 2025 IT College Game Jam" name="made-for" />
     </ui:VisualElement>
