@@ -18,26 +18,29 @@ public class Player : MonoBehaviour {
 	[Tooltip("Jump time in seconds")]
 	public float jumpTime;
 	public float jumpForce;
-
-	[Header("Sounds")]
-	public AudioSource audioSource;
-	public AudioClip jumpClip;
-
+	
 	State state = State.Sitting;
 	public enum State {
 		Sitting, Jumping, PreparingForJump
 	}
+	
+	[Header("Sounds")]
+	public AudioSource audioSource;
+	public AudioClip jumpClip;
+	public AudioClip deathClip;
 
 	[Header("Death by overhydration")]
 	public LayerMask ground;
 	public Collider2D groundContactCollider;
 	bool IsOnGround {
 		get {
+			
 			List<Collider2D> colliders = new();
 			int amount = groundContactCollider.GetContacts(new ContactFilter2D() { layerMask = ground, useLayerMask = true, useTriggers = true }, colliders);
 			foreach (Collider2D collider in colliders) {
 				print(collider.name);
 			}
+			print($"IsOnGround check: {amount > 0}");
 			return amount > 0;
 		}
 	}
@@ -57,7 +60,7 @@ public class Player : MonoBehaviour {
 	private void Start() {
 		sprite.sprite = frogSit;
 
-		slider?.gameObject.SetActive(false);
+		if (slider != null) slider.gameObject.SetActive(false);
 	}
 
 	void FixedUpdate() {
@@ -80,7 +83,7 @@ public class Player : MonoBehaviour {
 		state = State.PreparingForJump;
 
 		while (Input.GetKey(KeyCode.Mouse0)) {
-			slider?.gameObject.SetActive(true);
+			if (slider != null) slider.gameObject.SetActive(true);
 			
 			jumpForce += Time.deltaTime * 5;
 			jumpTime += Time.deltaTime;
@@ -96,10 +99,10 @@ public class Player : MonoBehaviour {
 		}
 
 		state = State.Jumping;
-		slider?.gameObject.SetActive(false);
+		if (slider != null) slider.gameObject.SetActive(false);
 		_rb.linearVelocity = _rb.GetRelativeVector(Vector2.up) * jumpDistance / jumpTime * (jumpForce + 1);
 		sprite.sprite = frogJump;
-		audioSource.PlayOneShot(jumpClip);
+		if (audioSource != null && jumpClip != null) audioSource.PlayOneShot(jumpClip);
 
 		yield return new WaitForSeconds(jumpTime);
 
@@ -121,6 +124,7 @@ public class Player : MonoBehaviour {
 			Debug.LogError("No death screen, cannot die");
 			return;
 		}
+		if (GlobalSound.Instance != null && deathClip != null ) GlobalSound.Instance.PlayOneShot(deathClip);
 		Instantiate(deathScreen);
 		Destroy(gameObject);
 	}
