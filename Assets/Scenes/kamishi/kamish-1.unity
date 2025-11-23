@@ -801,15 +801,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2101600974860322194, guid: ceb158d2e992057c6ad90eb65a8cf9b6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2101600974860322194, guid: ceb158d2e992057c6ad90eb65a8cf9b6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2101600974860322194, guid: ceb158d2e992057c6ad90eb65a8cf9b6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2101600974860322194, guid: ceb158d2e992057c6ad90eb65a8cf9b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -896,8 +896,8 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1196531543}
   - {fileID: 3813575983723400979}
+  - {fileID: 1196531543}
   - {fileID: 5162174578888173736}
   - {fileID: 1796671623423535935}
   - {fileID: 372408240}

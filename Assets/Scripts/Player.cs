@@ -31,6 +31,7 @@ public class Player : MonoBehaviour {
 	[Header("Death by overhydration")]
 	public LayerMask ground;
 	public Collider2D groundContactCollider;
+
 	bool IsOnGround {
 		get {
 			
@@ -120,6 +121,4 @@ public class Player : MonoBehaviour {
 	void VisualForceJump() {
 		if (slider != null) slider.value = _startSlider;
 	}
-
-	
 }
