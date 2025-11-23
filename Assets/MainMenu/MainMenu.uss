@@ -8,7 +8,7 @@ VisualElement {
 }
 
 #logo {
-    --unity-image: url("project://database/Assets/frogge.jpeg?fileID=2800000&guid=3401d66f3303454b7bdf1995d05b5db2&type=3#frogge");
+    --unity-image: url("project://database/Assets/Sprites/frogge.jpeg?fileID=2800000&guid=3401d66f3303454b7bdf1995d05b5db2&type=3#frogge");
     --unity-image-size: scale-to-fit;
 }
 
