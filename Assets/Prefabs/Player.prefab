@@ -97,6 +97,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundContactCollider: {fileID: 3927374866918619263}
+  deathScreen: {fileID: 8279263824798883225, guid: 86c90e4acbfa55de090ba63ed4cdde7f, type: 3}
   sprite: {fileID: 7279114892795287954}
   frogJump: {fileID: -5806840172668023785, guid: 12beb8d492acf6cd0883dabfc68c9bac, type: 3}
   frogSit: {fileID: 1894953123, guid: 027414993be1bbd48aaa5c99f1ab96c8, type: 3}
