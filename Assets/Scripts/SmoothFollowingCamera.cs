@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class SmoothFollowingCamera : MonoBehaviour {
 	Transform playerTransform = null;
-	[Tooltip("Moves distance to player * speed * Time.deltaTime each frame")]
-	public float speed = 0.5f;
-	[Tooltip("The distance at which the camera snaps to the player position")]
-	public float snapDistance = 0.2f;
+	[Tooltip("Movement speed in Unity units per second")]
+	public float speed = 3;
 
 	void Update() {
 		UpdateTrackedPlayer();
@@ -13,9 +11,10 @@ public class SmoothFollowingCamera : MonoBehaviour {
 	}
 	void Follow() {
 		if (playerTransform == null) return;
-		Vector2 delta = playerTransform.position.To2D() - transform.position.To2D();
-		if (delta.magnitude <= snapDistance) transform.Translate(delta);
-		else transform.Translate(delta * speed);
+		Vector2 playerPosition = playerTransform.position;
+		Vector2 delta = playerPosition - transform.position.To2D();
+		if (delta.magnitude <= speed * Time.deltaTime) transform.position = new(playerPosition.x, playerPosition.y, transform.position.z); // We are fast enough to teleport to the player in this frame, but we don't want to change z
+		else transform.Translate(delta.normalized * speed * Time.deltaTime);
 	}
 	void UpdateTrackedPlayer() {
 		GameController manager = GameController.Instance;
