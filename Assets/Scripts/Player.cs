@@ -139,8 +139,7 @@ public class Player : MonoBehaviour {
 	}
 	
 	void VisualForceJump() {
-<<<<<<< HEAD
-		slider.value = _startSlider;
+		if (slider != null) slider.value = _startSlider;
 	}
 
 	[Header("Teleporting")]
@@ -154,8 +153,5 @@ public class Player : MonoBehaviour {
 
 	public void Teleported() {
 		SceneManager.LoadScene(toScene);
-=======
-		if (slider != null) slider.value = _startSlider;
->>>>>>> d2abc6d6fd80ab0cfc0926549a91ceed9f733d5d
 	}
 }
