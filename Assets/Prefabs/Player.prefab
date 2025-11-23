@@ -91,6 +91,7 @@ MonoBehaviour:
   jumpDistance: 1
   jumpTime: 0.2
   jumpForce: 0
+  state: 0
   audioSource: {fileID: 8980911908843159219}
   jumpClip: {fileID: 8300000, guid: 2495fd7461196254ba8be9d0a5fdd363, type: 3}
   deathClip: {fileID: 8300000, guid: 330b10df12af46b4b8252d46b2fc9500, type: 3}

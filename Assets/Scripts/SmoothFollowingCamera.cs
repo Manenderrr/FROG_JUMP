@@ -18,8 +18,8 @@ public class SmoothFollowingCamera : MonoBehaviour {
 		else transform.Translate(delta * speed);
 	}
 	void UpdateTrackedPlayer() {
-		RespawnManager manager = RespawnManager.Instance;
+		GameController manager = GameController.Instance;
 		Player currentPlayer;
-		if ((manager = RespawnManager.Instance) != null && (currentPlayer = manager.CurrentPlayer) != null) playerTransform = currentPlayer.transform;
+		if ((manager = GameController.Instance) != null && (currentPlayer = manager.CurrentPlayer) != null) playerTransform = currentPlayer.transform;
 	}
 }

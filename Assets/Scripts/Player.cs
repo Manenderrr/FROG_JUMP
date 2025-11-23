@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
@@ -20,7 +18,7 @@ public class Player : MonoBehaviour {
 	public float jumpTime;
 	public float jumpForce;
 	
-	State state = State.Sitting;
+	public State state = State.Sitting;
 	public enum State {
 		Sitting, Jumping, PreparingForJump
 	}
@@ -38,10 +36,6 @@ public class Player : MonoBehaviour {
 			
 			List<Collider2D> colliders = new();
 			int amount = groundContactCollider.GetContacts(new ContactFilter2D() { layerMask = ground, useLayerMask = true, useTriggers = true }, colliders);
-			foreach (Collider2D collider in colliders) {
-				print(collider.name);
-			}
-			print($"IsOnGround check: {amount > 0}");
 			return amount > 0;
 		}
 	}
@@ -120,16 +114,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void DieIfNotOnGround() {
-		if (!IsOnGround) Die();
-	}
-	public void Die() {
-		if (deathScreen == null) {
-			Debug.LogError("No death screen, cannot die");
-			return;
-		}
-		if (GlobalSound.Instance != null && deathClip != null ) GlobalSound.Instance.PlayOneShot(deathClip);
-		Instantiate(deathScreen);
-		Destroy(gameObject);
+		if (!IsOnGround) GameController.Instance.Death();
 	}
 	
 	void VisualForceJump() {

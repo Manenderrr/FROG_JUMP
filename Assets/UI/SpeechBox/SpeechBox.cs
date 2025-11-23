@@ -34,11 +34,4 @@ public class SpeechBox : MonoBehaviour {
 		}
 		_text.text = lines[currentLineIndex];
 	}
-	
-	void HideDocument() {
-		ui.rootVisualElement.style.display = DisplayStyle.None;
-	}
-	void ShowDocument() {
-		ui.rootVisualElement.style.display = StyleKeyword.Null;
-	}
 }
