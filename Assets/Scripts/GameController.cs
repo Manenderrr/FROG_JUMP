@@ -35,7 +35,9 @@ public class GameController : MonoBehaviour {
 		currentCheckpoint = transform;
 		if (respawnPlayerOnStart) Respawn();
 	}
-	
+	void Update() {
+		if (Input.GetKey(KeyCode.Escape)) Application.Quit();
+	}
 	public void Death() {
 		if (deathScreen == null) {
 			Debug.LogError("No death screen, cannot die");
