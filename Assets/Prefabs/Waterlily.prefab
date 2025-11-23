@@ -8,16 +8,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD:Assets/Prefabs/waterlily_0.prefab
-  - component: {fileID: 5301357548387466906}
-  - component: {fileID: 957708445566484853}
-  - component: {fileID: 616721603693816354}
-  - component: {fileID: 3447565654787104853}
-  - component: {fileID: 8320734699289450104}
-  m_Layer: 0
-  m_Name: waterlily_0
-  m_TagString: Ground
-=======
   - component: {fileID: 517983406215952635}
   - component: {fileID: 1039505911936664401}
   - component: {fileID: 587980143232784013}
@@ -26,7 +16,6 @@ GameObject:
   m_Layer: 6
   m_Name: Waterlily
   m_TagString: Untagged
->>>>>>> d2abc6d6fd80ab0cfc0926549a91ceed9f733d5d:Assets/Prefabs/Waterlily.prefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
