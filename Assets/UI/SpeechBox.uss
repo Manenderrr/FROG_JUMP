@@ -1,0 +1,39 @@
+#frame {
+    background-color: rgba(0, 0, 0, 0.59);
+    color: rgb(255, 255, 255);
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-size: 25px;
+    flex-grow: 1;
+}
+
+#next-arrow {
+    --unity-image: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4154780841294389669&guid=f6c68a0f2a63743d4af96b06c893c0f5&type=3#arrow-down");
+}
+
+#text {
+    flex-grow: 1;
+}
+
+#next-key {
+    -unity-text-align: middle-center;
+}
+
+#next-container {
+    flex-direction: row;
+    justify-content: center;
+}
