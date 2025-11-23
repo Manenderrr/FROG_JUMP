@@ -29,6 +29,7 @@ public class Player : MonoBehaviour {
 	private float _startSlider = 5;
 
 	public bool isOnGround = true;
+	public LayerMask ground;
 
 	State state = State.Sitting;
 
@@ -101,8 +102,6 @@ public class Player : MonoBehaviour {
 	void VisualForceJump() {
 		slider.value = _startSlider;
 	}
-
-	public LayerMask ground;
 
 	void CheckGround () {
 		isOnGround = Physics2D.OverlapCircle(transform.position, 0.5f, ground);
