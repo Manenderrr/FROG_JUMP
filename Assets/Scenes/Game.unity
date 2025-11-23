@@ -769,12 +769,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -5806840172668023785, guid: 12beb8d492acf6cd0883dabfc68c9bac, type: 3}
+  m_Sprite: {fileID: 1894953123, guid: 027414993be1bbd48aaa5c99f1ab96c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.25, y: 2.5}
+  m_Size: {x: 1.40625, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -832,14 +832,14 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.65}
-    oldSize: {x: 1.25, y: 2.5}
-    newSize: {x: 1.25, y: 2.5}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.40625, y: 1.5}
+    newSize: {x: 1.40625, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.25, y: 2.5}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &2093657657
 MonoBehaviour:
@@ -860,7 +860,7 @@ MonoBehaviour:
   jumpForce: 0
   _frog: {fileID: 2093657653}
   frogJump: {fileID: -5806840172668023785, guid: 12beb8d492acf6cd0883dabfc68c9bac, type: 3}
-  frogSit: {fileID: 521674441870001754, guid: 027414993be1bbd48aaa5c99f1ab96c8, type: 3}
+  frogSit: {fileID: 1894953123, guid: 027414993be1bbd48aaa5c99f1ab96c8, type: 3}
   slider: {fileID: 0}
   isOnGround: 1
   ground:

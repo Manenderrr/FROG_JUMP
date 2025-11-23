@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 640
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-0 (3)-Photoroom_0
+      name: frog_0
       rect:
         serializedVersion: 2
-        x: 84
-        y: 33
-        width: 858
-        height: 908
+        x: 0
+        y: 0
+        width: 45
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a56cf04142c5d3700800000000000000
-      internalID: 521674441870001754
+      spriteID: 5f3f154248acc56ed9dec8b1f5d5065c
+      internalID: 1894953123
       vertices: []
       indices: 
       edges: []
@@ -135,6 +135,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      frog_0: 1894953123
+      frog_1: 1314260042
+      frog_2: -1403260532
       pixil-frame-0 (3)-Photoroom_0: 521674441870001754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
