@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 	[Tooltip("Jump distance Unity distance units")]
 	public float jumpDistance = 1;
 	[Tooltip("Jump time in seconds")]
-	public float jumpTime = 1;
+	public float jumpTime;
 	public float jumpForce;
 
 	[Header("Sprites")]
@@ -66,10 +66,14 @@ public class Player : MonoBehaviour {
 		while (Input.GetKey(KeyCode.Mouse0)) {
 			slider.gameObject.SetActive(true);
 			jumpForce += Time.deltaTime * 5;
+			jumpTime += Time.deltaTime;
 			_startSlider -= Time.deltaTime * 5;
 
 			if (jumpForce > 5) {
 				jumpForce = 5;
+			}
+			if (jumpTime > 0.75f) {
+				jumpTime = 0.75f;
 			}
 			yield return null;
 		}
@@ -83,6 +87,7 @@ public class Player : MonoBehaviour {
 
 		_rb.linearVelocity = Vector2.zero;
 		_frog.sprite = frogSit;
+		jumpTime = 0.2f;
 		jumpForce = 0;
 		_startSlider = 5;
 		state = State.Sitting;

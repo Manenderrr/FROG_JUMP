@@ -177,13 +177,16 @@ MonoBehaviour:
   _rb: {fileID: 8959123621722584442}
   RotationSpeed: 50
   jumpDistance: 1
-  jumpTime: 1
+  jumpTime: 0.2
   jumpForce: 0
   _frog: {fileID: 1599974553515319110}
   frogJump: {fileID: -5806840172668023785, guid: 12beb8d492acf6cd0883dabfc68c9bac, type: 3}
   frogSit: {fileID: 521674441870001754, guid: 027414993be1bbd48aaa5c99f1ab96c8, type: 3}
   slider: {fileID: 7931042742801707248}
   isOnGround: 1
+  ground:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &8959123621722584442
 Rigidbody2D:
   serializedVersion: 5
