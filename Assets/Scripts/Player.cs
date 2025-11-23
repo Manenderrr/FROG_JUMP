@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
@@ -17,12 +18,16 @@ public class Player : MonoBehaviour {
 	[Tooltip("Jump time in seconds")]
 	public float jumpTime;
 	public float jumpForce;
-	
+
+	[Header("Sounds")]
+	public AudioSource audioSource;
+	public AudioClip jumpClip;
+
 	State state = State.Sitting;
 	public enum State {
 		Sitting, Jumping, PreparingForJump
 	}
-	
+
 	[Header("Death by overhydration")]
 	public LayerMask ground;
 	public Collider2D groundContactCollider;
@@ -45,7 +50,9 @@ public class Player : MonoBehaviour {
 
 	[Header("Slider")]
 	public Slider slider;
-	float _startSlider = 5;
+	private float _startSlider = 5;
+
+	public bool isOnGround = true;
 
 	private void Start() {
 		sprite.sprite = frogSit;
@@ -92,6 +99,7 @@ public class Player : MonoBehaviour {
 		slider?.gameObject.SetActive(false);
 		_rb.linearVelocity = _rb.GetRelativeVector(Vector2.up) * jumpDistance / jumpTime * (jumpForce + 1);
 		sprite.sprite = frogJump;
+		audioSource.PlayOneShot(jumpClip);
 
 		yield return new WaitForSeconds(jumpTime);
 

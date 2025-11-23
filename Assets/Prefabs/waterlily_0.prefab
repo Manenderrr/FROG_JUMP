@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 957708445566484853}
   - component: {fileID: 616721603693816354}
   - component: {fileID: 3447565654787104853}
-  - component: {fileID: 6142865316896463781}
+  - component: {fileID: 8320734699289450104}
   m_Layer: 6
   m_Name: waterlily_0
   m_TagString: Ground
@@ -156,7 +156,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1
---- !u!114 &6142865316896463781
+--- !u!114 &8320734699289450104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4058300229054933085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d85acc8222d6632448f4f69c4ec6f394, type: 3}
+  m_Script: {fileID: 11500000, guid: fb8601bf8ecb7f03fae1e3ca69d769d9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OnGround
-  _playerObject: {fileID: 7630424145554114628, guid: 35d908e63323aea48977d5e0d906b7f5, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::Waterlily
