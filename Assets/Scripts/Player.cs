@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour {
 	[Header("Rigidbody 2D")]
@@ -13,7 +12,7 @@ public class Player : MonoBehaviour {
 	public float RotationSpeed = 50;
 
 	[Header("Jumping")]
-	[Tooltip("Jump distance Unity distance units")]
+	[Tooltip("Jump distance in Unity distance units")]
 	public float jumpDistance = 1;
 	[Tooltip("Jump time in seconds")]
 	public float jumpTime;
@@ -62,7 +61,7 @@ public class Player : MonoBehaviour {
 
 	IEnumerator Jump() {
 		state = State.PreparingForJump;
-
+		
 		while (Input.GetKey(KeyCode.Mouse0)) {
 			slider.gameObject.SetActive(true);
 			jumpForce += Time.deltaTime * 5;
