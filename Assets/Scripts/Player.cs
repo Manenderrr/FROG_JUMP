@@ -29,10 +29,11 @@ public class Player : MonoBehaviour {
 	bool IsOnGround {
 		get {
 			List<Collider2D> colliders = new();
+			int amount = groundContactCollider.GetContacts(new ContactFilter2D() { layerMask = ground, useLayerMask = true, useTriggers = true }, colliders);
 			foreach (Collider2D collider in colliders) {
 				print(collider.name);
 			}
-			return groundContactCollider.GetContacts(new ContactFilter2D() { layerMask = ground, useTriggers = true }, colliders) > 0;
+			return amount > 0;
 		}
 	}
 	public DeathScreen deathScreen;
@@ -108,8 +109,8 @@ public class Player : MonoBehaviour {
 		if (!IsOnGround) Die();
 	}
 	public void Die() {
-		if (deathScreen is null) {
-			DeathScreen.Restart();
+		if (deathScreen == null) {
+			Debug.LogError("No death screen, cannot die");
 			return;
 		}
 		Instantiate(deathScreen);
@@ -117,7 +118,7 @@ public class Player : MonoBehaviour {
 	}
 	
 	void VisualForceJump() {
-		if (slider is not null) slider.value = _startSlider;
+		if (slider != null) slider.value = _startSlider;
 	}
 	
 }
